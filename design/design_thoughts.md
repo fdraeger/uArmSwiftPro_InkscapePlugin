@@ -6,7 +6,7 @@
  - the plugin may create an Inkscape layer which show demarkations of the drawable area. So the user can directly see if the SVG is within this area.
  - yet to be proved: the accuracy of movements of the arm depends on the location within the area. It is presumed that the accuracy is reduced the closer the arm reaches the limits of the area. It needs to be discussed how the plugin deals with this.
  - differences between uArm models: relevant different behaviours w of this plugin with respect to the various uArm models need to be clearly communicated/documented (precision of the uArm Swift Pro is considerably higher than with the other models)
- - G Code: the gcode implemented for the uArm is quite limited. It only supports G0, G1 commands. When it comes to circles, the gcode standard refers to G02,G03 commands which create movement along an arc-segment of a circle. This is not available for uArm yet. Two Options: implement G02 and G03 commands in the uArm firmware or avoid the generation of G02 and G03 in the Inkscape plugin and generate a series of G0/G1 commands instead.
+ - G Code: the gcode implemented for the uArm is quite limited. It only supports G0, G1 commands. When it comes to circles, the gcode standard refers to G02,G03 commands which create movement along an arc-segment of a circle. This is not available for uArm yet. Two Options: implement G02 and G03 commands in the uArm firmware or avoid the generation of G02 and G03 in the Inkscape plugin and generate a series of G0/G1 commands instead. Investigate the use of uArm's G2201 command.
  
 ## Laser Specific
 
