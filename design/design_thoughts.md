@@ -5,6 +5,7 @@
  - the area covered by the uArm Swift Pro is not a rectangular shape. This needs to be covered by the plugin in order to avoid movements outside this area.
  - the plugin may create an Inkscape layer which show demarkations of the drawable area. So the user can directly see if the SVG is within this area.
  - yet to be proved: the accuracy of movements of the arm depends on the location within the area. It is presumed that the accuracy is reduced the closer the arm reaches the limits of the area. It needs to be discussed how the plugin deals with this.
+ - differences between uArm models: relevant different behaviours w of this plugin with respect to the various uArm models need to be clearly communicated/documented (precision of the uArm Swift Pro is considerably higher than with the other models)
  
 ## Laser Specific
 
