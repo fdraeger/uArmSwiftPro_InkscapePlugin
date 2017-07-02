@@ -17,4 +17,6 @@
 ## Inkscape Specific
 
  - Discuss if the plugin should only use information from a specific Inkscape layer with a specific name.
+ - provide settings for uArm parking position. The uArm then moves to this position and allows the user to place the object in front of the arm. The plugin will be paused for this. Once the user continues, the plugin will start printing from the parking position.
+ 
  
