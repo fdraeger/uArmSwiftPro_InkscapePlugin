@@ -37,7 +37,17 @@ The list below is a working list of features that could be provided.
 1. **Safe Area Definition**
 
    uArm movements are restricted to a specific area. This is partly because of the coordinate model which is built into the firmware, but also to mechanical reasons. The mechanics of the uArm cannot provide the same accuracy to all areas the uArm is technically able to reach. In order to support the user, the plugin should create a new layer in Inkscape which indicates the safe area with a sufficient level of accuracy. The plugin should also generate a graph which indicates the areas, the arm is technically capable of reaching. 
+   
+1. **Custom Safe Areas**
 
+   Allow the user to define and load external SVG files which define the safe area (optional).
 
+1. **GCode Output**
+
+   Optionally write GCode to a file.
+  
+1. **Verify Printability**
+
+   Using the Safe Area, the arm will not move outside this area, if this option is selected.
  
  
