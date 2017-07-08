@@ -6,7 +6,7 @@ The SVG file in this directory marks the area the uArm can reach. This drawing w
 and will be loaded into a separate Inkscape layer. This will help users to align their drawings and make sure
 they fit within the acitiviy area of the robotic arm.
 
-<img src="https://github.com/fdraeger/uArmSwiftPro_InkscapePlugin/printarea/uArmSwiftPro_Max.svg" 
+<img src="https://github.com/fdraeger/uArmSwiftPro_InkscapePlugin/blob/master/printarea/uArmSwiftPro_Max.svg" 
 alt="uArmSwiftPro_Max.svg" width="240" height="600" border="10" />
 
 Users can also manually load the uArmSwiftPro_Max.svg file into Inkscape as a reference. 
