@@ -27,3 +27,4 @@ Using polar coordinates :
 
 The green line in the activity area drawing indicates the maximum reach when using cartesian coordinates: a radius of 300.
 
+The y-axis direction of the robot is different from the Inkscape model. The plugin will need to translate between these two.
