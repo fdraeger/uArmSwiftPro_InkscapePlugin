@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+    <_name>About</_name>
+    <id>de.fdraeger.uarm_inkscape.extension.about</id>
+	<dependency type="executable" location="extensions">uarm.py</dependency>
+	<dependency type="executable" location="extensions">inkex.py</dependency>
+	<param name='active-tab' type="notebook">
+
+	<page name='about' _gui-text='About'>	
+		<_param name="help" type="description">This extenstion was developed for the uArm Swift Pro to allow laser or pen printing from Inkscape. 
+
+The uArm homepage is: https://forum.ufactory.cc/   
+This project is located at: https://github.com/fdraeger/uArmSwiftPro_InkscapePlugin 
+This code is based on: http://www.cnc-club.ru/gcodetools	
+
+		</_param>
+	</page>
+
+		<page name='help' _gui-text='Help'>
+			<_param name="fullhelp" type="description">PRESS APPLY TO OBTAIN LIST OF ARGUMENTS PASSED BY INKSCAPE
+The uArm Swift Pro plugin
+
+ - adds a layer to you Inkscape drawing to indicate the activity area of the robot
+ - creates GCode from your Inkscape drawign sepcifially for the uArm Swift Pro
+ - lets you print directly or write GCode to a file
+    
+</_param>	
+
+		</page>
+
+	</param>	
+    <effect>
+		<effects-menu>
+			<submenu _name="uArmSwiftPro"/>
+		</effects-menu>
+		<object-type>path</object-type>
+    </effect>
+    <script>
+        <command reldir="extensions" interpreter="python">uarm.py</command>
+    </script>
+</inkscape-extension>

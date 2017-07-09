@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+    <_name>Print</_name>
+    <id>de.fdraeger.uarm_inkscape.extension.print</id>
+	<dependency type="executable" location="extensions">uarm.py</dependency>
+	<dependency type="executable" location="extensions">inkex.py</dependency>
+	<param name='active-tab' type="notebook">
+
+	<page name='params' _gui-text='Parameter'>	
+		<_param name="help" type="description">Possible Parameters are:
+- Mode (Laser, Pen) 
+- Offset
+- Default Speed
+- Z-Axis Level
+- Home Position
+- End Position
+
+
+		</_param>
+	</page>
+
+
+	<page name='print' _gui-text='Print'>	
+		<_param name="help" type="description">Helpful text goes here
+
+		</_param>
+	</page>
+
+		<page name='help' _gui-text='Help'>
+			<_param name="fullhelp" type="description">PRESS APPLY TO OBTAIN LIST OF ARGUMENTS PASSED BY INKSCAPE
+The uArm Swift Pro plugin
+
+ - adds a layer to you Inkscape drawing to indicate the activity area of the robot
+ - creates GCode from your Inkscape drawign sepcifially for the uArm Swift Pro
+ - lets you print directly or write GCode to a file
+    
+</_param>	
+
+		</page>
+
+	</param>	
+    <effect>
+		<effects-menu>
+			<submenu _name="uArmSwiftPro"/>
+		</effects-menu>
+		<object-type>path</object-type>
+    </effect>
+    <script>
+        <command reldir="extensions" interpreter="python">uarm.py</command>
+    </script>
+</inkscape-extension>

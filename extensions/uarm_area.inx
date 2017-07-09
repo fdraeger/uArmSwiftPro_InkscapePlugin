@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+    <_name>Area</_name>
+    <id>de.fdraeger.uarm_inkscape.extension.area</id>
+	<dependency type="executable" location="extensions">uarm.py</dependency>
+	<dependency type="executable" location="extensions">inkex.py</dependency>
+	<param name='active-tab' type="notebook">
+
+		<page name='area' _gui-text='Area'>	
+			<param name="area-ext-file" type="string" _gui-text="Maximum area cutting curves:">uArmSwiftPro_Max.svg</param>
+
+			<_param name="help" type="description">
+This plugin will create a new layer which will show the activity boundaries of the robot arm. You may use your own SVG file.
+			</_param>
+		</page>		
+
+		<page name='position' _gui-text='Position'>
+            <param name="pos-root-x" type="float" _gui-text="X-Position Root:" 	min="-5000" max="5000">300,0</param>
+            <param name="pos-root-y" type="float" _gui-text="Y-Position Root:" 	min="-5000" max="5000">300,0</param>
+            <param name="pos-root-z" type="float" _gui-text="Z-Position Root:" 	min="-5000" max="5000">0,0</param>
+
+            <param name="rotate-root" type="float" _gui-text="Rotate Root:" 	min="0,0" max="359,99">0,0</param>
+
+			<_param name="poshelp" type="description">TO DO: px vs mm vs inches !!!
+Place the print area drawing as desired. The center of the robotarm is located at the origin of the dashed arrow. </_param>	
+		</page>
+
+		<page name='areahelp' _gui-text='Help'>
+			<_param name="fullhelp" type="description">
+The uArm Swift Pro robotic arm has a limited activity area. This plugin feature creates a new layer to your 
+Inkscape drawing indicating this area - the regions the robot can reach.
+
+It also indicates the base, where the robot will be placed.
+
+The idea is that the user can arrange his inkscape drawing so it fits within the activity area of the robot.
+
+This project and its documentation is located at: https://github.com/fdraeger/uArmSwiftPro_InkscapePlugin 
+</_param>	
+
+		</page>
+
+	</param>	
+    <effect>
+		<effects-menu>
+			<submenu _name="uArmSwiftPro"/>
+		</effects-menu>
+		<object-type>path</object-type>
+    </effect>
+    <script>
+        <command reldir="extensions" interpreter="python">uarm.py</command>
+    </script>
+</inkscape-extension>
