@@ -11,7 +11,7 @@ alt="uArmSwiftPro_Max.svg" width="240" height="600" border="10" />
 
 Users can also manually load the uArmSwiftPro_Max.svg file into Inkscape as a reference. 
 
-## Issues with the Activity Area
+## Issues with the Print Area
 
 As of the current version of the arm, there is an inconsistent behaviour iwht regard to how GCode commands are executed.
 
@@ -27,3 +27,4 @@ Using polar coordinates :
 
 The green line in the activity area drawing indicates the maximum reach when using cartesian coordinates: a radius of 300.
 
+The y-axis direction of the robot is different from the Inkscape model. The plugin will need to translate between these two.
