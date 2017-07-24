@@ -8,7 +8,10 @@
 	<param name='active-tab' type="notebook">
 
 	<page name='about' _gui-text='About'>	
-		<_param name="help" type="description">This extenstion was developed for the uArm Swift Pro to allow laser or pen printing from Inkscape. 
+		<_param name="help" type="description">STILL UNDER DEVELOPMENT. PRINTING IS NOT YET IMPLEMENTED!
+		
+This extension was developed for the uArm Swift Pro to allow laser or pen printing from Inkscape. 
+It allows you to position the uArm towards teh drawing to use the best print/activity area of the robot.
 
 The uArm homepage is: https://forum.ufactory.cc/   
 This project is located at: https://github.com/fdraeger/uArmSwiftPro_InkscapePlugin 
@@ -18,12 +21,14 @@ This code is based on: http://www.cnc-club.ru/gcodetools
 	</page>
 
 		<page name='help' _gui-text='Help'>
-			<_param name="fullhelp" type="description">PRESS APPLY TO OBTAIN LIST OF ARGUMENTS PASSED BY INKSCAPE
-The uArm Swift Pro plugin
+			<_param name="fullhelp" type="description">How to use this plugin:
 
- - adds a layer to you Inkscape drawing to indicate the activity area of the robot
- - creates GCode from your Inkscape drawign sepcifially for the uArm Swift Pro
- - lets you print directly or write GCode to a file
+1. Use the Area extension to place your uArm Swift Pro. The extension will create a new layer with 
+additional information on the uArm position and configuration.
+
+2. Use the Print extension to set print mode (laser or pen), z-axis elevation, home positions, etc.
+
+3. Finally print your drawing by directly connecting to your uArm Swift Pro and print.
     
 </_param>	
 

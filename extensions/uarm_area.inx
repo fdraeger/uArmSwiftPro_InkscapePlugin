@@ -7,38 +7,93 @@
 	<dependency type="executable" location="extensions">inkex.py</dependency>
 	<param name='active-tab' type="notebook">
 
-		<page name='area' _gui-text='Area'>	
-			<param name="area-ext-file" type="string" _gui-text="Maximum area cutting curves:">uArmSwiftPro_Max.svg</param>
-
-			<_param name="help" type="description">
-This plugin will create a new layer which will show the activity boundaries of the robot arm. You may use your own SVG file.
-			</_param>
-		</page>		
-
-		<page name='position' _gui-text='Position'>
-            <param name="pos-root-x" type="float" _gui-text="X-Position Root:" 	min="-5000" max="5000">300,0</param>
-            <param name="pos-root-y" type="float" _gui-text="Y-Position Root:" 	min="-5000" max="5000">300,0</param>
-            <param name="pos-root-z" type="float" _gui-text="Z-Position Root:" 	min="-5000" max="5000">0,0</param>
-
-            <param name="rotate-root" type="float" _gui-text="Rotate Root:" 	min="0,0" max="359,99">0,0</param>
-
-			<_param name="poshelp" type="description">TO DO: px vs mm vs inches !!!
-Place the print area drawing as desired. The center of the robotarm is located at the origin of the dashed arrow. </_param>	
-		</page>
-
 		<page name='areahelp' _gui-text='Help'>
 			<_param name="fullhelp" type="description">
-The uArm Swift Pro robotic arm has a limited activity area. This plugin feature creates a new layer to your 
+The uArm Swift Pro robotic arm has a limited activity area. This plugin feature adds a new layer to your 
 Inkscape drawing indicating this area - the regions the robot can reach.
 
-It also indicates the base, where the robot will be placed.
+It also indicates the base, where the robot will be placed. The idea is that the user can arrange his inkscape drawing so it fits within the activity area of the robot.
 
-The idea is that the user can arrange his inkscape drawing so it fits within the activity area of the robot.
+Steps:
+
+1. Use the "Area" tab for predefined uArm positions
+
+OR:
+
+   Use the "Position" tab for custom or fine tuning positions
+   
+Use the Live Preview feature to see the effects of your settings without actually adding a layer to your file.
+
+Note: the plugin creates a new layer, the "uArmLayer" layer. If you need to update the position drawing, remove the layer first: press CTRL-SHIFT-L, 
+select the "uArmLayer" leayer and click on delete.
+
+3. move on to the "Print" tab for print options and printing
+
 
 This project and its documentation is located at: https://github.com/fdraeger/uArmSwiftPro_InkscapePlugin 
 </_param>	
 
 		</page>
+
+		<page name='area' _gui-text='Area'>	
+
+			<_param name="pos-help" type="description">
+Select side and alignment to place the uArm on one of the edges.
+			</_param>
+
+
+			<param name="pos-face" type="enum" gui-text="Robot facing">
+			   <item value="right">right</item>
+			   <item value="up">up</item>
+			   <item value="down">down</item>
+			   <item value="left">left</item>
+			</param>
+
+			<param name="pos-side" type="enum" gui-text="Side to place the uArm">
+			   <item value="left">left</item>
+			   <item value="top">top</item>
+			   <item value="bottom">bottom</item>
+			   <item value="right">right</item>
+			</param>
+
+			<param name="unit" type="enum" _gui-text="Measurement unit:" >
+				<item value="mm">mm</item>
+				<item value="cm">cm</item>
+				<item value="in">in</item>
+				<item value="px">px</item>
+			</param>
+
+            <param name="side-offset" type="float" _gui-text="Distance off this side:" 	min="-50000" max="50000">120,0</param>
+			
+			<param name="pos-align" type="enum" gui-text="Alignment">
+			   <item value="center">center</item>
+			   <item value="left">left</item>
+			   <item value="right">right</item>
+			</param>
+
+			<_param name="todo" type="description">
+ 
+			</_param>
+
+		</page>		
+
+		<page name='position' _gui-text='Position'>
+			<param name="unit" type="enum" _gui-text="Measurement unit:" >
+				<item value="mm">mm</item>
+				<item value="cm">cm</item>
+				<item value="in">in</item>
+				<item value="px">px</item>
+			</param>
+
+
+            <param name="pos-root-x" type="float" _gui-text="X-Position Root:" 	min="-5000" max="5000">300,0</param>
+            <param name="pos-root-y" type="float" _gui-text="Y-Position Root:" 	min="-5000" max="5000">300,0</param>
+            <!-- param name="pos-root-z" type="float" _gui-text="Z-Position Root:" 	min="-5000" max="5000">0,0</param -->
+
+            <param name="rotate-root" type="float" _gui-text="Rotate Root:" 	min="0,0" max="359,99">0,0</param>
+
+		</page>
+
 
 	</param>	
     <effect>

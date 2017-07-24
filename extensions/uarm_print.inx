@@ -7,37 +7,55 @@
 	<dependency type="executable" location="extensions">inkex.py</dependency>
 	<param name='active-tab' type="notebook">
 
-	<page name='params' _gui-text='Parameter'>	
-		<_param name="help" type="description">Possible Parameters are:
-- Mode (Laser, Pen) 
-- Offset
-- Default Speed
-- Z-Axis Level
-- Home Position
-- End Position
+	<page name='prthowto' _gui-text='How To Print'>	
+		<_param name="prthow" type="description">How to use this dialog:
+
+Different print modes use different parameters such as offset of pen/laser to the coordinates,
+speed, etc.
+
+To begin to print, please follow these steps:
+
+1. modify the parameters of the mode you want to print. Go to the Laser or Pen tab and review and change the settings.
+
+2. go to the Print tab, review the print parameters and select 'Write to File' if you want to review the commands the plugin sends to your robot.
+
+3. SECURITY: Review your robot setup. Is there plenty of room for robot movements? No candles in the way? How about the cat?
+Use the laser protection goggles that cam with the laser you use! Let no one be without protective goggles while printing! 
+
+4. press Apply to start printing.
 
 
 		</_param>
 	</page>
 
+	<page name='pen-params' _gui-text='Pen'>	
+		<_param name="pen-help" type="description">Possible Parameters are:</_param>
+		<param name="pen-offset" type="string" _gui-text="Offset of actuator (use either mm,cm,in)" >(0.0mm,0.0mm,0.0mm)</param>
+		<param name="pen-defspeed" type="float" _gui-text="Default speed" 	min="0.0" max="5000.0">400</param>
+		<param name="pen-z-level" type="float" _gui-text="z-Level for drawing" 	min="-10.0" max="3000.0">100.0</param>
+		<param name="pen-start" type="string" _gui-text="Starting position (X,Y,Z) in mm,cm,in" >(120.0mm,0.0mm,50.0mm)</param>
+		<param name="pen-end" type="string" _gui-text="End position (X,Y,Z) in mm,cm,in" >(120.0mm,0.0mm,50.0mm)</param>
+		<param name="pen-use-polar" type="boolean" gui-text="Use extended arm reach (EXPERIMENTAL)">false</param>
+	</page>
+
+	<page name='laser-params' _gui-text='Laser'>	
+		<_param name="laser-help" type="description">Possible Parameters are:</_param>
+		<param name="laser-offset" type="string" _gui-text="Offset of actuator (use either mm,cm,in)" >(0.0mm,0.0mm,0.0mm)</param>
+		<param name="laser-defspeed" type="float" _gui-text="Default speed" 	min="0.0" max="5000.0">400</param>
+		<param name="laser-z-level" type="float" _gui-text="z-Level for drawing" min="-10.0" max="3000.0">100.0</param>
+		<param name="laser-start" type="string" _gui-text="Starting position (use either mm,cm,in)" >(120.0mm,0.0mm,50.0mm)</param>
+		<param name="laser-end" type="string" _gui-text="End position (use either mm,cm,in)" >(120.0mm,0.0mm,50.0mm)</param>
+		<param name="laser-use-polar" type="boolean" gui-text="Use extended arm reach (EXPERIMENTAL)">false</param>
+	</page>
 
 	<page name='print' _gui-text='Print'>	
-		<_param name="help" type="description">Helpful text goes here
-
-		</_param>
+		<_param name="help" type="description">Helpful text goes here</_param>
+		
+		<param name="prt-mode" type="enum" gui-text="Robot operation mode:">
+		   <item value="pen">Pen</item>
+		   <item value="laser">Laser</item>
+		</param>
 	</page>
-
-		<page name='help' _gui-text='Help'>
-			<_param name="fullhelp" type="description">PRESS APPLY TO OBTAIN LIST OF ARGUMENTS PASSED BY INKSCAPE
-The uArm Swift Pro plugin
-
- - adds a layer to you Inkscape drawing to indicate the activity area of the robot
- - creates GCode from your Inkscape drawign sepcifially for the uArm Swift Pro
- - lets you print directly or write GCode to a file
-    
-</_param>	
-
-		</page>
 
 	</param>	
     <effect>
